@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="金坷垃官网 - 中国互联网经典网络恶搞文化起源地。收录金坷垃系列视频、经典台词、背景故事及同人创作，重温那个充满荒诞与梦想的年代。">
+    <meta name="keywords" content="金坷垃, 金坷垃官网, 网络恶搞, 梦想庄园, 荒诞主义, 经典视频">
+    <title>金坷垃官网-经典网络恶搞文化与梦想庄园</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d4a017; /* 金坷垃黄 */
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --bg-color: #f9f9f9;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-light: #666666;
+            --spacing-unit: 16px;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 头部 */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--secondary-color);
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .cta-btn {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .cta-btn:hover {
+            background-color: #b8920f;
+            color: #fff;
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(135deg, #f5e6a3 0%, #fff 100%);
+            padding: 60px 0;
+            text-align: center;
+            border-bottom: 4px solid var(--primary-color);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            color: var(--secondary-color);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-tags span {
+            display: inline-block;
+            background: rgba(212, 160, 23, 0.15);
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            margin: 0 5px;
+        }
+
+        /* 核心概念区 */
+        .section-title {
+            text-align: center;
+            margin: 50px 0 30px;
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+        }
+
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .concept-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .concept-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .concept-icon {
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+
+        .concept-card h3 {
+            margin-bottom: 12px;
+            color: var(--secondary-color);
+        }
+
+        .concept-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* 经典语录 */
+        .quotes-section {
+            background-color: #fff;
+            padding: 60px 0;
+            border-top: 1px solid #eee;
+        }
+
+        .quote-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+        }
+
+        .quote-item {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 20px;
+            margin-bottom: 20px;
+            font-style: italic;
+            color: var(--text-main);
+        }
+
+        .quote-item cite {
+            display: block;
+            margin-top: 10px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            font-style: normal;
+        }
+
+        /* 历史时间轴 */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background-color: #ddd;
+        }
+
+        .timeline-item {
+            position: relative;
+            width: 50%;
+            padding: 20px 40px;
+            box-sizing: border-box;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            top: 25px;
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(odd)::after {
+            right: -8px;
+        }
+
+        .timeline-item:nth-child(even)::after {
+            left: -8px;
+        }
+
+        .timeline-content h4 {
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+
+        .timeline-content p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* 常见问题 */
+        .faq-section {
+            background-color: #f4f4f4;
+            padding: 60px 0;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 30px;
+        }
+
+        .faq-item {
+            background: #fff;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .faq-item h4 {
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .faq-item p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: var(--secondary-color);
+            color: #fff;
+            padding: 40px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h5 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.85rem;
+            color: #7f8c8d;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 50px;
+                padding-right: 10px;
+                text-align: left !important;
+            }
+
+            .timeline-item:nth-child(odd) {
+                left: 0;
+            }
+
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+
+            .timeline-item:nth-child(odd)::after,
+            .timeline-item:nth-child(even)::after {
+                left: 12px;
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <span>◆</span> 金坷垃官网
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#history">历史起源</a></li>
+                    <li><a href="#quotes">经典语录</a></li>
+                    <li><a href="#faq">百科问答</a></li>
+                    <li><a href="#" class="cta-btn">重温经典</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>荒诞中的梦想，网络文化的图腾</h1>
+                <p>金坷垃不仅仅是一段网络视频，它代表了一个时代的狂欢与解构。这里是梦想庄园的官方记忆库，记录那些令人捧腹又引人深思的经典瞬间。</p>
+                <div class="hero-tags">
+                    <span>#网络恶搞</span>
+                    <span>#梦想庄园</span>
+                    <span>#荒诞主义</span>
+                    <span>#流行文化</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Concepts -->
+        <section class="container">
+            <h2 class="section-title">核心文化解析</h2>
+            <div class="concept-grid">
+                <article class="concept-card">
+                    <div class="concept-icon">🌾</div>
+                    <h3>梦想庄园</h3>
+                    <p>故事发生的虚构背景，一个被金坷垃改变命运的农场。在这里，肥力与梦想并存，代表了网络创作者构建的独立平行宇宙。</p>
+                </article>
+                <article class="concept-card">
+                    <div class="concept-icon">🇺🇸</div>
+                    <h3>美式田园</h3>
+                    <p>视频中标志性的美式农场风格，巨大的玉米地、现代化的收割机，与夸张的台词形成强烈反差，构建出一种独特的“美式乡村”审美。</p>
+                </article>
+                <article class="concept-card">
+                    <div class="concept-icon">🧪</div>
+                    <h3>神奇肥料</h3>
+                    <p>推动剧情发展的核心道具。金色的肥料象征着无限的可能性，它不仅是植物生长的催化剂，更是网络亚文化中“万能钥匙”的隐喻。</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Classic Quotes -->
+        <section class="quotes-section" id="quotes">
+            <div class="container">
+                <h2 class="section-title">流传甚广的“金句”</h2>
+                <div class="quote-list">
+                    <div class="quote-item">
+                        “美国西部大开发，我们用金坷垃！”
+                        <cite>——《金坷垃》经典开场白</cite>
+                    </div>
+                    <div class="quote-item">
+                        “肥料两袋，两袋半，两袋，两袋半！”
+                        <cite>——《金坷垃》施肥情节</cite>
+                    </div>
+                    <div class="quote-item">
+                        “只有金坷垃才能拯救这片荒芜的土地！”
+                        <cite>——《金坷垃》核心台词</cite>
+                    </div>
+                    <div class="quote-item">
+                        “平原还是平原，就像我的梦想一样。”
+                        <cite>——《金坷垃》情感升华</cite>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- History Timeline -->
+        <section class="container" id="history">
+            <h2 class="section-title">发展历程</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>起源时期</h4>
+                        <p>网络社区中开始出现以“美国西部开发”为背景的恶搞创作，初步构建了金坷垃的世界观。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>爆发时期</h4>
+                        <p>标志性视频发布，夸张的表演、密集的梗以及独特的配音风格迅速在各大视频网站和论坛传播。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>文化沉淀</h4>
+                        <p>金坷垃从单纯的搞笑视频演变为一种文化符号，衍生出大量的同人作品、表情包和周边梗。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>现状</h4>
+                        <p>作为网络亚文化的代表之一，金坷垃依然被网友引用，其台词成为网络社交中的特定暗号。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section" id="faq">
+            <div class="container">
+                <h2 class="section-title">常见问题 (FAQ)</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h4>金坷垃是什么？</h4>
+                        <p>金坷垃是中国互联网上极具影响力的网络恶搞文化现象，通常指代一系列以美国农场为背景的搞笑视频或相关衍生内容。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>视频里的肥料真的有用吗？</h4>
+                        <p>当然没有。视频中展示的神奇肥料效果纯属虚构，是创作者为了喜剧效果而进行的夸张艺术处理。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>为什么叫“金坷垃”？</h4>
+                        <p>“金”代表珍贵和夸张，“坷垃”是北方方言中土块的意思。这个词组合在一起，既接地气又带有一种荒诞的幽默感。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>在哪里可以找到原版视频？</h4>
+                        <p>作为网络经典，原版视频散落在各大视频平台的旧存档或用户上传中，建议通过正规视频平台搜索关键词查看。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h5>关于金坷垃</h5>
+                    <p style="color: #bdc3c7; font-size: 0.9rem; line-height: 1.8;">
+                        金坷垃官网致力于记录和整理这一独特的网络文化现象。我们不生产内容，我们只是互联网记忆的搬运工。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h5>相关链接</h5>
+                    <ul>
+                        <li><a href="#">经典视频回顾</a></li>
+                        <li><a href="#">同人创作展示</a></li>
+                        <li><a href="#">梗图大全</a></li>
+                        <li><a href="#">社区讨论</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>免责声明</h5>
+                    <ul>
+                        <li><a href="#">版权声明</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 金坷垃文化整理站. All Rights Reserved. 本站为非盈利性整理站点，内容仅供学习交流。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
