@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="油液检测 - 专业工业润滑油油液分析、铁谱分析、颗粒度分析及设备故障诊断服务平台。提供在线油液检测指南、检测项目介绍、实验室预约及常见故障排查方案。">
+    <meta name="keywords" content="油液检测,油液分析,铁谱分析,颗粒度分析,润滑油检测,设备故障诊断,工业油品">
+    <title>油液检测-工业设备润滑油分析诊断与油品状态评估平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --primary-dark: #004494;
+            --accent-color: #00c4cc;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --bg-light: #f8f9fa;
+            --bg-white: #ffffff;
+            --border-color: #e0e0e0;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-white);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: var(--bg-white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-main);
+            padding: 10px 0;
+            position: relative;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .cta-button:hover {
+            background-color: var(--primary-dark);
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .tag {
+            background-color: #e6f0fa;
+            color: var(--primary-color);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--primary-color);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* 为什么选择我们 */
+        .features {
+            padding: 60px 0;
+            background-color: var(--bg-white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--bg-light);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* 检测项目 */
+        .services {
+            padding: 60px 0;
+            background-color: var(--bg-light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .service-img {
+            width: 100%;
+            height: 200px;
+            background-color: #ddd;
+            object-fit: cover;
+        }
+
+        .service-content {
+            padding: 25px;
+        }
+
+        .service-content h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .service-content p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .service-link {
+            color: var(--primary-color);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .service-link:hover {
+            gap: 10px;
+        }
+
+        /* 常见问题 */
+        .faq {
+            padding: 60px 0;
+            background-color: var(--bg-white);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 10px;
+        }
+
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            padding: 20px 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-main);
+        }
+
+        .faq-question:hover {
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            color: var(--text-secondary);
+        }
+
+        .faq-answer p {
+            padding-bottom: 20px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+        }
+
+        .faq-item.active .faq-question svg {
+            transform: rotate(180deg);
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #1a1a1a;
+            color: #ccc;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+                油液检测<span>Pro</span>
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#services">检测项目</a></li>
+                    <li><a href="#features">服务优势</a></li>
+                    <li><a href="#guide">检测指南</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="cta-button">在线预约检测</a>
+        </div>
+    </header>
+
+    <!-- 首屏区域 -->
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-tags">
+                    <span class="tag">铁谱分析</span>
+                    <span class="tag">颗粒度分析</span>
+                    <span class="tag">粘度检测</span>
+                    <span class="tag">油品老化评估</span>
+                </div>
+                <h1>工业设备润滑油油液检测与故障诊断专家</h1>
+                <p>通过先进的油液分析技术，精准识别设备磨损状态，预防非计划停机，延长设备使用寿命，降低维护成本。</p>
+                <div class="hero-actions">
+                    <a href="#services" class="btn btn-primary">查看检测项目</a>
+                    <a href="#guide" class="btn btn-outline">了解检测流程</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 服务优势 -->
+        <section id="features" class="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2>为什么选择油液检测</h2>
+                    <p>基于物理化学分析与金属磨损机理，提供全面的设备健康评估</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🔍</div>
+                        <h3>早期故障预警</h3>
+                        <p>在设备发生明显故障前，通过油液中的金属颗粒和化学成分变化，提前发现潜在隐患。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚙️</div>
+                        <h3>磨损机理分析</h3>
+                        <p>准确判断磨损类型（粘着磨损、磨粒磨损、疲劳磨损等），为维修方案提供科学依据。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💰</div>
+                        <h3>降低运维成本</h3>
+                        <p>从“事后维修”转向“状态维修”，减少盲目换油和过度维修，显著节约润滑油和维修费用。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3>数据化健康报告</h3>
+                        <p>生成详细的检测报告，包含趋势分析图和健康评分，直观展示设备运行状态。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 检测项目 -->
+        <section id="services" class="services">
+            <div class="container">
+                <div class="section-header">
+                    <h2>核心检测服务项目</h2>
+                    <p>涵盖工业润滑系统全生命周期的关键指标分析</p>
+                </div>
+                <div class="services-grid">
+                    <article class="service-card">
+                        <img src="https://picsum.photos/seed/oil1/400/250" alt="颗粒度分析" class="service-img">
+                        <div class="service-content">
+                            <h3>颗粒度分析</h3>
+                            <p>定量分析油液中金属颗粒的尺寸、形状和数量，评估摩擦副的磨损程度和污染水平。</p>
+                            <a href="#" class="service-link">了解详情 &rarr;</a>
+                        </div>
+                    </article>
+                    <article class="service-card">
+                        <img src="https://picsum.photos/seed/oil2/400/250" alt="铁谱分析" class="service-img">
+                        <div class="service-content">
+                            <h3>铁谱分析</h3>
+                            <p>利用高梯度强磁场的原理，从油液中分离出金属磨粒，通过显微镜进行定性定量分析。</p>
+                            <a href="#" class="service-link">了解详情 &rarr;</a>
+                        </div>
+                    </article>
+                    <article class="service-card">
+                        <img src="https://picsum.photos/seed/oil3/400/250" alt="理化指标检测" class="service-img">
+                        <div class="service-content">
+                            <h3>理化指标检测</h3>
+                            <p>检测水分、闪点、粘度、酸值、碱值等理化参数，评估润滑油的变质程度和性能衰减。</p>
+                            <a href="#" class="service-link">了解详情 &rarr;</a>
+                        </div>
+                    </article>
+                    <article class="service-card">
+                        <img src="https://picsum.photos/seed/oil4/400/250" alt="油品老化分析" class="service-img">
+                        <div class="service-content">
+                            <h3>油品老化分析</h3>
+                            <p>分析油液中的氧化产物、硝化物和硫酸盐，判断油液老化原因，决定是否需要更换。</p>
+                            <a href="#" class="service-link">了解详情 &rarr;</a>
+                        </div>
+                    </article>
+                    <article class="service-card">
+                        <img src="https://picsum.photos/seed/oil5/400/250" alt="光谱分析" class="service-img">
+                        <div class="service-content">
+                            <h3>光谱分析</h3>
+                            <p>利用原子发射光谱技术，精确测定油液中微量元素（如铜、铁、铅、锡等）的浓度。</p>
+                            <a href="#" class="service-link">了解详情 &rarr;</a>
+                        </div>
+                    </article>
+                    <article class="service-card">
+                        <img src="https://picsum.photos/seed/oil6/400/250" alt="在线监测" class="service-img">
+                        <div class="service-content">
+                            <h3>在线油液监测</h3>
+                            <p>针对关键设备，提供实时在线监测方案，及时发现异常磨损，实现无人值守预警。</p>
+                            <a href="#" class="service-link">了解详情 &rarr;</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 检测指南 -->
+        <section id="guide" style="padding: 60px 0; background-color: var(--bg-white);">
+            <div class="container">
+                <div class="section-header">
+                    <h2>油液检测操作指南</h2>
+                    <p>如何正确取样与送检，确保检测数据的准确性</p>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
+                    <div>
+                        <h3 style="margin-bottom: 15px;">第一步：正确取样</h3>
+                        <p style="margin-bottom: 15px; color: var(--text-secondary);">取样前应清洗取样阀或取样点。使用专用取样瓶，避免使用橡胶塞（易释放污染物）。取样量应足够覆盖分析需求，通常不小于100ml。</p>
+                        <h3 style="margin-bottom: 15px;">第二步：密封保存</h3>
+                        <p style="margin-bottom: 15px; color: var(--text-secondary);">取样后立即密封瓶口，防止水分侵入和挥发。贴好标签，注明设备名称、油品牌号、取样时间、取样地点等信息。</p>
+                        <h3 style="margin-bottom: 15px;">第三步：及时送检</h3>
+                        <p style="color: var(--text-secondary);">常温下，油样应在取样后24小时内送至实验室。如需长时间保存，应置于阴凉避光处，并尽量避免剧烈震动。</p>
+                    </div>
+                    <div style="background: var(--bg-light); padding: 30px; border-radius: 8px;">
+                        <h3 style="margin-bottom: 20px;">检测流程概览</h3>
+                        <ul style="display: flex; flex-direction: column; gap: 15px;">
+                            <li style="display: flex; gap: 10px;">
+                                <span style="background: var(--primary-color); color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</span>
+                                <div>
+                                    <strong>样品接收与登记</strong>
+                                    <p style="font-size: 0.9rem; color: var(--text-secondary);">核对标签信息，进行外观检查。</p>
+                                </div>
+                            </li>
+                            <li style="display: flex; gap: 10px;">
+                                <span style="background: var(--primary-color); color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</span>
+                                <div>
+                                    <strong>预处理与理化测试</strong>
+                                    <p style="font-size: 0.9rem; color: var(--text-secondary);">水分、粘度、酸值等基础指标测试。</p>
+                                </div>
+                            </li>
+                            <li style="display: flex; gap: 10px;">
+                                <span style="background: var(--primary-color); color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</span>
+                                <div>
+                                    <strong>铁谱与光谱分析</strong>
+                                    <p style="font-size: 0.9rem; color: var(--text-secondary);">磨粒分离与微量元素定量分析。</p>
+                                </div>
+                            </li>
+                            <li style="display: flex; gap: 10px;">
+                                <span style="background: var(--primary-color); color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">4</span>
+                                <div>
+                                    <strong>数据综合分析与报告</strong>
+                                    <p style="font-size: 0.9rem; color: var(--text-secondary);">结合设备工况，出具诊断报告。</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 常见问题 -->
+        <section id="faq" class="faq">
+            <div class="container faq-container">
+                <div class="section-header">
+                    <h2>常见问题解答</h2>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        油液检测多久做一次比较合适？
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>这取决于设备的重要程度、运行工况以及油品的使用周期。对于关键设备，建议初期缩短检测周期（如每周或每月），待数据稳定后可延长至每季度或半年一次。定期检测有助于建立设备磨损趋势图。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        颗粒度分析中的NAS等级是什么意思？
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>NAS等级是美国国家航空航天局制定的颗粒污染度标准，共分为8级（NAS 1638）。等级数字越小，表示油液中的颗粒污染越少，油液质量越好。例如NAS 4级为较清洁的油液，而NAS 8级则表明污染较重，可能需要更换。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        如何判断设备是否需要换油？
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>不能仅凭时间或里程决定换油。应结合油液分析报告，当理化指标（如酸值、粘度、水分）超过新油标准，或磨损颗粒浓度急剧上升且呈增长趋势时，应考虑更换润滑油。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        铁谱分析和光谱分析有什么区别？
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>光谱分析主要针对微量元素（如铁、铜、铅等），灵敏度高但无法识别颗粒形状；铁谱分析侧重于大颗粒（>5微米）的分离和形貌观察，能识别磨损类型。两者结合使用，诊断更为全面。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.8;">专注于工业润滑与油液检测领域，提供从实验室分析到现场监测的一站式技术解决方案。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">检测项目</a></li>
+                        <li><a href="#">在线预约</a></li>
+                        <li><a href="#">收费标准</a></li>
+                        <li><a href="#">企业案例</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>服务支持</h4>
+                    <ul>
+                        <li><a href="#">取样指南</a></li>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">报告解读</a></li>
+                        <li><a href="#">技术咨询</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li>电话：400-123-4567</li>
+                        <li>邮箱：support@oiltest.com</li>
+                        <li>地址：科技园区创新路88号</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 油液检测服务平台 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ 折叠交互逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const item = this.parentElement;
+                    const isActive = item.classList.contains('active');
+                    
+                    // 关闭所有其他项
+                    document.querySelectorAll('.faq-item').forEach(i => {
+                        i.classList.remove('active');
+                    });
+                    
+                    // 如果点击的不是已经打开的项，则打开它
+                    if (!isActive) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+  </html>
