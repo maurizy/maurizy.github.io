@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动感之星精灵-潮流潮玩与数字藏品展示平台</title>
+    <meta name="description" content="动感之星精灵官网，专注于潮流玩具（潮玩）、盲盒收藏与数字艺术藏品展示。提供新品发布、周边商城、收藏家社区及收藏指南服务。">
+    <meta name="keywords" content="动感之星精灵, 潮流玩具, 盲盒, 数字藏品, 收藏指南, 潮玩周边">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #6c5ce7;
+            --secondary-color: #a29bfe;
+            --accent-color: #fd79a8;
+            --dark-bg: #2d3436;
+            --light-bg: #f5f6fa;
+            --text-main: #2d3436;
+            --text-light: #636e72;
+            --white: #ffffff;
+            --card-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--dark-bg);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-main);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cta-btn {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(108, 92, 231, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f5f6fa 0%, #dfe6e9 100%);
+        }
+
+        .hero-content {
+            z-index: 2;
+            max-width: 600px;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background-color: rgba(108, 92, 231, 0.1);
+            color: var(--primary-color);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: var(--dark-bg);
+        }
+
+        .hero h1 span {
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero h1 span::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 12px;
+            bottom: 5px;
+            left: 0;
+            background-color: rgba(253, 121, 168, 0.3);
+            z-index: -1;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+            max-width: 480px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn-primary:hover {
+            background-color: #5649c0;
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 10px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .hero-visual {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            background-image: radial-gradient(circle at 70% 30%, rgba(162, 155, 254, 0.2) 0%, transparent 60%),
+                              radial-gradient(circle at 20% 80%, rgba(253, 121, 168, 0.15) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        /* Stats Section */
+        .stats {
+            background-color: var(--white);
+            padding: 40px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            color: var(--dark-bg);
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Categories */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: var(--dark-bg);
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .category-card {
+            background-color: var(--white);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid transparent;
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow);
+            border-color: rgba(108, 92, 231, 0.1);
+        }
+
+        .cat-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(108, 92, 231, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+
+        .category-card h3 {
+            margin-bottom: 10px;
+            color: var(--dark-bg);
+        }
+
+        .category-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Featured Collection */
+        .collection-section {
+            background-color: #fff;
+        }
+
+        .collection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background-color: var(--light-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .product-card:hover {
+            box-shadow: var(--card-shadow);
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            height: 300px;
+            background-color: #ddd;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-category {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .product-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--dark-bg);
+        }
+
+        .product-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        .price {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .btn-sm {
+            padding: 6px 16px;
+            font-size: 0.85rem;
+            border-radius: 4px;
+            background-color: var(--white);
+            color: var(--text-main);
+            border: 1px solid #ddd;
+            transition: var(--transition);
+        }
+
+        .btn-sm:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        /* Guide Section */
+        .guide-section {
+            background-color: var(--dark-bg);
+            color: var(--white);
+        }
+
+        .guide-section .section-header h2 {
+            color: var(--white);
+        }
+
+        .guide-section .section-header p {
+            color: #b2bec3;
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .guide-item {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .guide-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+
+        .guide-item ul {
+            padding-left: 20px;
+        }
+
+        .guide-item li {
+            list-style-type: disc;
+            margin-bottom: 10px;
+            color: #dfe6e9;
+        }
+
+        .guide-item li::marker {
+            color: var(--primary-color);
+        }
+
+        /* FAQ */
+        .faq-section {
+            background-color: var(--light-bg);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: var(--white);
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--dark-bg);
+        }
+
+        .faq-question:hover {
+            background-color: #f8f9fa;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-light);
+            display: none;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1e272e;
+            color: #b2bec3;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h2 {
+            color: var(--white);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .footer-brand p {
+            max-width: 300px;
+            font-size: 0.9rem;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                height: auto;
+                padding: 80px 0;
+                text-align: center;
+                flex-direction: column;
+            }
+
+            .hero-content {
+                margin-bottom: 50px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-actions {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                position: relative;
+                width: 100%;
+                height: 300px;
+                background: none;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .nav-links {
+                display: none; /* Simple hiding for mobile, ideally a burger menu */
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                动感之星<span>精灵</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#home">首页</a>
+                <a href="#products">潮玩系列</a>
+                <a href="#community">收藏社区</a>
+                <a href="#guide">收藏指南</a>
+            </nav>
+            <a href="#products" class="cta-btn">立即选购</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-visual"></div>
+            <div class="container hero-content">
+                <span class="hero-tag">2024 年度新品发布</span>
+                <h1>探索无限创意<br><span>动感之星精灵</span>的奇幻世界</h1>
+                <p>汇聚全球顶尖设计师理念，将二次元美学与潮流玩具有机结合。无论是收藏家还是潮流爱好者，这里都有属于你的独特伙伴。</p>
+                <div class="hero-actions">
+                    <a href="#products" class="btn-primary">浏览最新系列</a>
+                    <a href="#guide" class="btn-outline">了解收藏价值</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats">
+            <div class="container stats-grid">
+                <div class="stat-item">
+                    <h3>500+</h3>
+                    <p>独家设计款式</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50w+</h3>
+                    <p>全球收藏家</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>正版授权</p>
+                </div>
+                <div class="stat-item">
+                    <h3>24h</h3>
+                    <p>极速发货服务</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>探索多元宇宙</h2>
+                    <p>动感之星精灵系列涵盖多种风格与主题，满足不同收藏家的审美需求。</p>
+                </div>
+                <div class="category-grid">
+                    <div class="category-card">
+                        <div class="cat-icon">✨</div>
+                        <h3>星际探索系列</h3>
+                        <p>穿梭于银河系，体验外星文明的奇妙设定。</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="cat-icon">🌊</div>
+                        <h3>深海秘境系列</h3>
+                        <p>深潜海底世界，发现沉睡千年的神秘生物。</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="cat-icon">🏰</div>
+                        <h3>幻想城堡系列</h3>
+                        <p>重返童话王国，守护纯真与梦想的城堡。</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="cat-icon">⚡</div>
+                        <h3>机甲风暴系列</h3>
+                        <p>未来科技与机械美学的完美碰撞。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section id="products" class="section collection-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>当季热门精选</h2>
+                    <p>最受欢迎的限量款与热门款，捕捉每一个精彩瞬间。</p>
+                </div>
+                <div class="collection-grid">
+                    <!-- Product 1 -->
+                    <article class="product-card">
+                        <div class="product-image">
+                            <span class="badge">新品</span>
+                            <img src="https://picsum.photos/seed/dongman1/400/400" alt="动感之星精灵-星际领航员">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">星际探索系列</div>
+                            <h3 class="product-title">动感之星精灵-星际领航员</h3>
+                            <p style="font-size:0.9rem; color:#666; margin-bottom:10px;">高精度涂装，可动关节设计，附带专属亚克力底座。</p>
+                            <div class="product-meta">
+                                <span class="price">¥ 328.00</span>
+                                <button class="btn-sm">查看详情</button>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Product 2 -->
+                    <article class="product-card">
+                        <div class="product-image">
+                            <span class="badge" style="background-color: #0984e3;">热销</span>
+                            <img src="https://picsum.photos/seed/dongman2/400/400" alt="动感之星精灵-深海守护者">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">深海秘境系列</div>
+                            <h3 class="product-title">动感之星精灵-深海守护者</h3>
+                            <p style="font-size:0.9rem; color:#666; margin-bottom:10px;">半透明材质，还原海洋生物的光泽质感。</p>
+                            <div class="product-meta">
+                                <span class="price">¥ 288.00</span>
+                                <button class="btn-sm">查看详情</button>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Product 3 -->
+                    <article class="product-card">
+                        <div class="product-image">
+                            <span class="badge" style="background-color: #e17055;">限量</span>
+                            <img src="https://picsum.photos/seed/dongman3/400/400" alt="动感之星精灵-机甲先锋">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">机甲风暴系列</div>
+                            <h3 class="product-title">动感之星精灵-机甲先锋</h3>
+                            <p style="font-size:0.9rem; color:#666; margin-bottom:10px;">精密齿轮结构，展现未来都市的机械美学。</p>
+                            <div class="product-meta">
+                                <span class="price">¥ 358.00</span>
+                                <button class="btn-sm">查看详情</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div style="text-align: center; margin-top: 40px;">
+                    <a href="#" class="btn-outline" style="border-color: var(--primary-color); color: var(--primary-color);">浏览全部产品</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Collector Guide -->
+        <section id="guide" class="section guide-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>收藏家指南</h2>
+                    <p>如何开始你的收藏之旅？新手必读的选购与保养知识。</p>
+                </div>
+                <div class="guide-grid">
+                    <div class="guide-item">
+                        <h3>选购建议</h3>
+                        <ul>
+                            <li>根据预算选择基础款或限定款。</li>
+                            <li>关注材质工艺（PVC、ABS、半透明等）。</li>
+                            <li>查看包装完整性，确保附带配件齐全。</li>
+                            <li>优先选择官方渠道购买以保真。</li>
+                        </ul>
+                    </div>
+                    <div class="guide-item">
+                        <h3>保养技巧</h3>
+                        <ul>
+                            <li>避免阳光直射，防止褪色变形。</li>
+                            <li>定期使用软布擦拭灰尘。</li>
+                            <li>存放时请使用防尘袋或展示盒。</li>
+                            <li>避免与硬物摩擦导致划痕。</li>
+                        </ul>
+                    </div>
+                    <div class="guide-item">
+                        <h3>价值评估</h3>
+                        <ul>
+                            <li>限量版与设计师联名款升值空间大。</li>
+                            <li>品相完整度直接影响二手市场价格。</li>
+                            <li>关注官方发布的后续补货计划。</li>
+                            <li>加入收藏社区交流获取最新行情。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section faq-section">
+            <div class="container faq-container">
+                <div class="section-header">
+                    <h2>常见问题</h2>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">动感之星精灵适合什么年龄段的用户？</div>
+                    <div class="faq-answer">产品主要面向 8 岁以上的青少年及成人收藏爱好者。部分产品包含细小零件，建议在成人监护下进行组装或观赏。</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">如何确认购买的玩具是否为正版？</div>
+                    <div class="faq-answer">我们提供官方防伪标签。购买后请扫描包装上的二维码，或登录官网会员中心查询订单真伪。官方渠道（官网、授权店）均保证100%正品。</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">收到货发现有破损怎么办？</div>
+                    <div class="faq-answer">我们承诺破损包赔。请在签收后24小时内拍照联系客服，并提供物流单号，我们将为您安排补发或退款。</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">盲盒系列是否有隐藏款？</div>
+                    <div class="faq-answer">是的，盲盒系列包含普通款和隐藏款（概率约为1/144）。具体隐藏款款式请参考官方发布的隐藏款目录。</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2>动感之星精灵</h2>
+                    <p>致力于为全球收藏家提供高品质的潮流玩具与数字艺术体验。连接热爱，创造无限可能。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#home">首页</a></li>
+                        <li><a href="#products">所有产品</a></li>
+                        <li><a href="#guide">购买指南</a></li>
+                        <li><a href="#">关于我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>支持服务</h4>
+                    <ul>
+                        <li><a href="#">售后服务</a></li>
+                        <li><a href="#">物流查询</a></li>
+                        <li><a href="#">防伪验证</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">微博账号</a></li>
+                        <li><a href="#">小红书</a></li>
+                        <li><a href="#">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 动感之星精灵 版权所有. 本站内容仅供展示，不代表任何投资建议。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Toggle Logic
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+
+        // Smooth Scroll for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
